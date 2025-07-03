@@ -2,41 +2,28 @@
 <html lang="zxx">
 
 <head>
-    <!--====== Required meta tags ======-->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Adventure, Tours, Travel">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--====== Title ======-->
-    <title>Gowilds - Tours and Travel HTML Template</title>
-    <!--====== Favicon Icon ======-->
+    <title>Edelwess Tour & Travel Advanture</title>
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
-    <!--====== Google Fonts ======-->
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <!--====== Flaticon css ======-->
-    <link rel="stylesheet" href="assets/fonts/flaticon/flaticon_gowilds.css">
-    <!--====== FontAwesome css ======-->
-    <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css">
-    <!--====== Bootstrap css ======-->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <!--====== magnific-popup css ======-->
-    <link rel="stylesheet" href="assets/vendor/magnific-popup/dist/magnific-popup.css">
-    <!--====== Slick-popup css ======-->
-    <link rel="stylesheet" href="assets/vendor/slick/slick.css">
-    <!--====== Jquery UI css ======-->
-    <link rel="stylesheet" href="assets/vendor/jquery-ui/jquery-ui.min.css">
-    <!--====== Nice Select css ======-->
-    <link rel="stylesheet" href="assets/vendor/nice-select/css/nice-select.css">
-    <!--====== Animate css ======-->
-    <link rel="stylesheet" href="assets/vendor/animate.css">
-    <!--====== Default css ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
-    <!--====== Style css ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('user_assets/fonts/flaticon/flaticon_gowilds.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/fonts/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/vendor/magnific-popup/dist/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/vendor/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/vendor/jquery-ui/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/vendor/nice-select/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/vendor/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/css/default.css') }}">
+    <link rel="stylesheet" href="{{ asset('user_assets/css/style.css') }}">
 </head>
 
 <body>
+    <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
     <!--====== Start Preloader ======-->
     <div class="preloader">
         <div class="loader">
@@ -57,6 +44,7 @@
             </div>
         </div>
     </div><!--====== Search From ======-->
+
     <!--====== Start Hero Section ======-->
     <header class="header-area header-two transparent-header">
         <!--====== Header Navigation ======-->
@@ -66,14 +54,14 @@
                 <div class="primary-menu">
                     <!--====== Site Branding ======-->
                     <div class="site-branding">
-                        <a href="index.html" class="brand-logo"><img src="assets/images/logo/logo-white.png"
+                        <a href="index.html" class="brand-logo"><img src="{{ asset('user_assets/images/logo/logo-white.png') }}"
                                 alt="Site Logo"></a>
                     </div>
                     <!--====== Nav Menu ======-->
                     <div class="nav-menu">
                         <!--====== Site Branding ======-->
                         <div class="mobile-logo mb-30 d-block d-xl-none">
-                            <a href="index.html" class="brand-logo"><img src="assets/images/logo/logo-black.png"
+                            <a href="index.html" class="brand-logo"><img src="{{ asset('user_assets/images/logo/logo-black.png') }}"
                                     alt="Site Logo"></a>
                         </div>
                         <!--=== Nav Search ===-->
@@ -89,31 +77,29 @@
                         <!--====== Main Menu ======-->
                         <nav class="main-menu">
                             <ul>
-                                <li class="menu-item has-children"><a href="#">Home</a></li>
-                                <li class="menu-item has-children"><a href="#">Tours</a></li>
-                                <li class="menu-item has-children"><a href="#">Destination</a></li>
-                                <li class="menu-item has-children"><a href="#">Blog</a></li>
-                                <li class="menu-item has-children"><a href="#">Pages</a></li>
+                                <li class="menu-item has-children"><a href="#">Beranda</a></li>
+                                <li class="menu-item has-children"><a href="#">Paket Trip</a></li>
+                                <li class="menu-item has-children"><a href="#">Cara Booking</a></li>
+                                <li class="menu-item has-children"><a href="#">Tentang Kami</a></li>
+                                <li class="menu-item has-children"><a href="#">Artikel</a></li>
+
                             </ul>
                         </nav>
                         <!--====== Menu Button ======-->
                         <div class="menu-button mt-40 d-xl-none">
-                            <a href="contact.html" class="main-btn secondary-btn">Book Now<i
+                            <a href="contact.html" class="main-btn secondary-btn">Booking Sekarang<i
                                     class="fas fa-paper-plane"></i></a>
                         </div>
                     </div>
                     <!--====== Nav Right Item ======-->
                     <div class="nav-right-item">
-                        <div class="search-btn" data-bs-toggle="modal" data-bs-target="#search-modal"><i
-                                class="far fa-search"></i></div>
-                        <div class="lang-dropdown">
-                            <select class="wide">
-                                <option value="English">English</option>
-                                <option value="French">French</option>
-                            </select>
-                        </div>
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="menu-item has-children"><a href="#">Masuk</a></li>
+                            </ul>
+                        </nav>
                         <div class="menu-button d-xl-block d-none">
-                            <a href="contact.html" class="main-btn primary-btn">Book Now<i
+                            <a href="contact.html" class="main-btn primary-btn">Booking Sekarang<i
                                     class="fas fa-paper-plane"></i></a>
                         </div>
                         <div class="navbar-toggler">
@@ -135,7 +121,7 @@
                 <!--=== Single Slider ===-->
                 <div class="single-slider">
                     <div class="image-layer bg_cover"
-                        style="background-image: url(assets/images/hero/hero-two_img-1.jpg);"></div>
+                        style="background-image: url(user_assets/images/hero/hero-two_img-2.jpg);"></div>
                     <div class="container-fluid">
                         <div class="row justify-content-center">
                             <div class="col-xl-9">
@@ -156,7 +142,7 @@
                 <!--=== Single Slider ===-->
                 <div class="single-slider">
                     <div class="image-layer bg_cover"
-                        style="background-image: url(assets/images/hero/hero-two_img-2.jpg);"></div>
+                        style="background-image: url(user_assets/images/hero/hero-two_img-2.jpg);"></div>
                     <div class="container-fluid">
                         <div class="row justify-content-center">
                             <div class="col-xl-9">
@@ -177,7 +163,7 @@
                 <!--=== Single Slider ===-->
                 <div class="single-slider">
                     <div class="image-layer bg_cover"
-                        style="background-image: url(assets/images/hero/hero-two_img-3.jpg);"></div>
+                        style="background-image: url(user_assets/images/hero/hero-two_img-2.jpg);"></div>
                     <div class="container-fluid">
                         <div class="row justify-content-center">
                             <div class="col-xl-9">
@@ -276,7 +262,7 @@
                     <!--=== Features Image Item ===-->
                     <div class="single-features-item-two mb-40 wow fadeInUp">
                         <div class="img-holder">
-                            <img src="assets/images/features/feat-5.jpg" alt="Features Image">
+                            <img src="{{ asset('user_assets/images/features/feat-5.jpg') }}" alt="Features Image">
                             <div class="item-overlay">
                                 <div class="content">
                                     <h3 class="title">Tent Camping</h3>
@@ -289,7 +275,7 @@
                     <!--=== Features Image Item ===-->
                     <div class="single-features-item-two mb-40 wow fadeInDown">
                         <div class="img-holder">
-                            <img src="assets/images/features/feat-6.jpg" alt="Features Image">
+                            <img src="{{ asset('user_assets/images/features/feat-6.jpg') }}" alt="Features Image">
                             <div class="item-overlay">
                                 <div class="content">
                                     <h3 class="title">Mountain Biking</h3>
@@ -302,7 +288,7 @@
                     <!--=== Features Image Item ===-->
                     <div class="single-features-item-two mb-40 wow fadeInUp">
                         <div class="img-holder">
-                            <img src="assets/images/features/feat-7.jpg" alt="Features Image">
+                            <img src="{{ asset('user_assets/images/features/feat-7.jpg') }}" alt="Features Image">
                             <div class="item-overlay">
                                 <div class="content">
                                     <h3 class="title">Fishing</h3>
@@ -315,7 +301,7 @@
                     <!--=== Features Image Item ===-->
                     <div class="single-features-item-two mb-40 wow fadeInDown">
                         <div class="img-holder">
-                            <img src="assets/images/features/feat-8.jpg" alt="Features Image">
+                            <img src="{{ asset('user_assets/images/features/feat-8.jpg') }}" alt="Features Image">
                             <div class="item-overlay">
                                 <div class="content">
                                     <h3 class="title">Kayaking</h3>
@@ -355,7 +341,7 @@
                 <div class="col-lg-6">
                     <!--=== About Image Box ===-->
                     <div class="about-one_image-box mb-50 wow fadeInRight">
-                        <img src="assets/images/about/about-1.jpg" class="radius-top-left-right-288"
+                        <img src="{{ asset('user_assets/images/about/about-1.jpg') }}" class="radius-top-left-right-288"
                             alt="About image">
                     </div>
                 </div>
@@ -369,7 +355,7 @@
                 <div class="col-lg-6 order-2 order-lg-1">
                     <!--=== We Image Box ===-->
                     <div class="we-image-box text-center text-lg-left wow fadeInLeft">
-                        <img src="assets/images/gallery/we-1.jpg" class="radius-top-left-right-288" alt="Image">
+                        <img src="{{ asset('user_assets/images/gallery/we-1.jpg') }}" class="radius-top-left-right-288" alt="Image">
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
@@ -421,7 +407,7 @@
             <div class="slider-active-4-item wow fadeInUp">
                 <!--=== Single Service Item ===-->
                 <div class="single-service-item-two">
-                    <div class="hover-bg bg_cover" style="background-image: url(assets/images/service/hover-bg.jpg);">
+                    <div class="hover-bg bg_cover" style="background-image: url{{ asset('user_assets/images/service/hover-bg.jpg') }};">
                     </div>
                     <div class="content">
                         <div class="icon">
@@ -436,7 +422,7 @@
                 </div>
                 <!--=== Single Service Item ===-->
                 <div class="single-service-item-two">
-                    <div class="hover-bg bg_cover" style="background-image: url(assets/images/service/hover-bg.jpg);">
+                    <div class="hover-bg bg_cover" style="background-image: url{{ asset('user_assets/images/service/hover-bg.jpg') }};">
                     </div>
                     <div class="content">
                         <div class="icon">
@@ -451,7 +437,7 @@
                 </div>
                 <!--=== Single Service Item ===-->
                 <div class="single-service-item-two">
-                    <div class="hover-bg bg_cover" style="background-image: url(assets/images/service/hover-bg.jpg);">
+                    <div class="hover-bg bg_cover" style="background-image: url{{ asset('user_assets/images/service/hover-bg.jpg') }};">
                     </div>
                     <div class="content">
                         <div class="icon">
@@ -466,7 +452,7 @@
                 </div>
                 <!--=== Single Service Item ===-->
                 <div class="single-service-item-two">
-                    <div class="hover-bg bg_cover" style="background-image: url(assets/images/service/hover-bg.jpg);">
+                    <div class="hover-bg bg_cover" style="background-image: url{{ asset('user_assets/images/service/hover-bg.jpg') }};">
                     </div>
                     <div class="content">
                         <div class="icon">
@@ -481,7 +467,7 @@
                 </div>
                 <!--=== Single Service Item ===-->
                 <div class="single-service-item-two">
-                    <div class="hover-bg bg_cover" style="background-image: url(assets/images/service/hover-bg.jpg);">
+                    <div class="hover-bg bg_cover" style="background-image: url{{ asset('user_assets/images/service/hover-bg.jpg') }};">
                     </div>
                     <div class="content">
                         <div class="icon">
@@ -515,7 +501,7 @@
                     <!--====== Single Team Item ======-->
                     <div class="single-team-item mb-30 wow fadeInUp">
                         <div class="member-img">
-                            <img src="assets/images/team/team-1.jpg" alt="Team Image">
+                            <img src="{{ asset('user_assets/images/team/team-1.jpg') }}" alt="Team Image">
                         </div>
                         <div class="member-info">
                             <h4 class="title">Donald D. Schafer</h4>
@@ -533,7 +519,7 @@
                     <!--====== Single Team Item ======-->
                     <div class="single-team-item mb-30 wow fadeInUp">
                         <div class="member-img">
-                            <img src="assets/images/team/team-2.jpg" alt="Team Image">
+                            <img src="{{ asset('user_assets/images/team/team-2.jpg') }}" alt="Team Image">
                         </div>
                         <div class="member-info">
                             <h4 class="title">William E. Combs</h4>
@@ -551,7 +537,7 @@
                     <!--====== Single Team Item ======-->
                     <div class="single-team-item mb-30 wow fadeInUp">
                         <div class="member-img">
-                            <img src="assets/images/team/team-3.jpg" alt="Team Image">
+                            <img src="{{ asset('user_assets/images/team/team-3.jpg') }}" alt="Team Image">
                         </div>
                         <div class="member-info">
                             <h4 class="title">Daniel G. Santana</h4>
@@ -569,7 +555,7 @@
                     <!--====== Single Team Item ======-->
                     <div class="single-team-item mb-30 wow fadeInUp">
                         <div class="member-img">
-                            <img src="assets/images/team/team-4.jpg" alt="Team Image">
+                            <img src="{{ asset('user_assets/images/team/team-4.jpg') }}" alt="Team Image">
                         </div>
                         <div class="member-info">
                             <h4 class="title">Mario M. Troutman</h4>
@@ -587,7 +573,7 @@
                     <!--====== Single Team Item ======-->
                     <div class="single-team-item mb-30 wow fadeInUp">
                         <div class="member-img">
-                            <img src="assets/images/team/team-5.jpg" alt="Team Image">
+                            <img src="{{ asset('user_assets/images/team/team-5.jpg') }}" alt="Team Image">
                         </div>
                         <div class="member-info">
                             <h4 class="title">Don O. Vaillancourt</h4>
@@ -605,7 +591,7 @@
                     <!--====== Single Team Item ======-->
                     <div class="single-team-item mb-30 wow fadeInUp">
                         <div class="member-img">
-                            <img src="assets/images/team/team-6.jpg" alt="Team Image">
+                            <img src="{{ asset('user_assets/images/team/team-6.jpg') }}" alt="Team Image">
                         </div>
                         <div class="member-info">
                             <h4 class="title">Eugene J. Gilliam</h4>
@@ -630,7 +616,7 @@
                 <!--====== Activity Item ======-->
                 <div class="single-activity-item mb-40">
                     <div class="img-holder">
-                        <img src="assets/images/gallery/act-1.jpg" alt="Image">
+                        <img src="{{ asset('user_assets/images/gallery/act-1.jpg') }}" alt="Image">
                     </div>
                     <div class="content">
                         <div class="meta">
@@ -651,7 +637,7 @@
                 <!--====== Activity Item ======-->
                 <div class="single-activity-item mb-40">
                     <div class="img-holder">
-                        <img src="assets/images/gallery/act-2.jpg" alt="Image">
+                        <img src="{{ asset('user_assets/images/gallery/act-2.jpg') }}" alt="Image">
                     </div>
                     <div class="content">
                         <div class="meta">
@@ -672,7 +658,7 @@
                 <!--====== Activity Item ======-->
                 <div class="single-activity-item mb-40">
                     <div class="img-holder">
-                        <img src="assets/images/gallery/act-3.jpg" alt="Image">
+                        <img src="{{ asset('user_assets/images/gallery/act-3.jpg') }}" alt="Image">
                     </div>
                     <div class="content">
                         <div class="meta">
@@ -695,7 +681,7 @@
     </section><!--====== End Activity Section ======-->
     <!--====== Start CTA Section ======-->
     <section class="cta-bg overlay bg_cover pt-150 pb-150"
-        style="background-image: url(assets/images/bg/cta-bg.jpg);">
+        style="background-image: url{{ asset('user_assets/images/bg/cta-bg.jpg') }};">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
@@ -735,7 +721,7 @@
                     <!--=== Single Blog Post ===-->
                     <div class="single-blog-post-two mb-40 wow fadeInUp">
                         <div class="post-thumbnail">
-                            <img src="assets/images/blog/blog-4.jpg" alt="Blog Image">
+                            <img src="{{ asset('user_assets/images/blog/blog-4.jpg') }}" alt="Blog Image">
                         </div>
                         <div class="entry-content">
                             <div class="post-meta">
@@ -751,7 +737,7 @@
                     <!--=== Single Blog Post ===-->
                     <div class="single-blog-post-two mb-40 wow fadeInDown">
                         <div class="post-thumbnail">
-                            <img src="assets/images/blog/blog-5.jpg" alt="Blog Image">
+                            <img src="{{ asset('user_assets/images/blog/blog-5.jpg') }}" alt="Blog Image">
                         </div>
                         <div class="entry-content">
                             <div class="post-meta">
@@ -775,9 +761,9 @@
                 <!--=== Single Gallery Item ===-->
                 <div class="single-gallery-item">
                     <div class="gallery-img">
-                        <img src="assets/images/gallery/gl-1.jpg" alt="Gallery Image">
+                        <img src="{{ asset('user_assets/images/gallery/gl-1.jpg') }}" alt="Gallery Image">
                         <div class="hover-overlay">
-                            <a href="assets/images/gallery/gl-1.jpg" class="icon-btn img-popup"><i
+                            <a href="{{ asset('user_assets/images/gallery/gl-1.jpg') }}" class="icon-btn img-popup"><i
                                     class="far fa-plus"></i></a>
                         </div>
                     </div>
@@ -785,9 +771,9 @@
                 <!--=== Single Gallery Item ===-->
                 <div class="single-gallery-item">
                     <div class="gallery-img">
-                        <img src="assets/images/gallery/gl-2.jpg" alt="Gallery Image">
+                        <img src="{{ asset('user_assets/images/gallery/gl-2.jpg') }}" alt="Gallery Image">
                         <div class="hover-overlay">
-                            <a href="assets/images/gallery/gl-2.jpg" class="icon-btn img-popup"><i
+                            <a href="{{ asset('user_assets/images/gallery/gl-2.jpg') }}" class="icon-btn img-popup"><i
                                     class="far fa-plus"></i></a>
                         </div>
                     </div>
@@ -795,9 +781,9 @@
                 <!--=== Single Gallery Item ===-->
                 <div class="single-gallery-item">
                     <div class="gallery-img">
-                        <img src="assets/images/gallery/gl-3.jpg" alt="Gallery Image">
+                        <img src="{{ asset('user_assets/images/gallery/gl-3.jpg') }}" alt="Gallery Image">
                         <div class="hover-overlay">
-                            <a href="assets/images/gallery/gl-3.jpg" class="icon-btn img-popup"><i
+                            <a href="{{ asset('user_assets/images/gallery/gl-3.jpg') }}" class="icon-btn img-popup"><i
                                     class="far fa-plus"></i></a>
                         </div>
                     </div>
@@ -805,9 +791,9 @@
                 <!--=== Single Gallery Item ===-->
                 <div class="single-gallery-item">
                     <div class="gallery-img">
-                        <img src="assets/images/gallery/gl-4.jpg" alt="Gallery Image">
+                        <img src="{{ asset('user_assets/images/gallery/gl-4.jpg') }}" alt="Gallery Image">
                         <div class="hover-overlay">
-                            <a href="assets/images/gallery/gl-4.jpg" class="icon-btn img-popup"><i
+                            <a href="{{ asset('user_assets/images/gallery/gl-4.jpg') }}" class="icon-btn img-popup"><i
                                     class="far fa-plus"></i></a>
                         </div>
                     </div>
@@ -815,9 +801,9 @@
                 <!--=== Single Gallery Item ===-->
                 <div class="single-gallery-item">
                     <div class="gallery-img">
-                        <img src="assets/images/gallery/gl-5.jpg" alt="Gallery Image">
+                        <img src="{{ asset('user_assets/images/gallery/gl-5.jpg') }}" alt="Gallery Image">
                         <div class="hover-overlay">
-                            <a href="assets/images/gallery/gl-5.jpg" class="icon-btn img-popup"><i
+                            <a href="{{ asset('user_assets/images/gallery/gl-5.jpg') }}" class="icon-btn img-popup"><i
                                     class="far fa-plus"></i></a>
                         </div>
                     </div>
@@ -825,9 +811,9 @@
                 <!--=== Single Gallery Item ===-->
                 <div class="single-gallery-item">
                     <div class="gallery-img">
-                        <img src="assets/images/gallery/gl-3.jpg" alt="Gallery Image">
+                        <img src="{{ asset('user_assets/images/gallery/gl-3.jpg') }}" alt="Gallery Image">
                         <div class="hover-overlay">
-                            <a href="assets/images/gallery/gl-3.jpg" class="icon-btn img-popup"><i
+                            <a href="{{ asset('user_assets/images/gallery/gl-3.jpg') }}" class="icon-btn img-popup"><i
                                     class="far fa-plus"></i></a>
                         </div>
                     </div>
@@ -845,7 +831,7 @@
                         <!--=== Single CTA Item ===-->
                         <div class="single-cta-item pr-lg-60 mb-40 wow fadeInLeft">
                             <div class="icon">
-                                <img src="assets/images/icon/support.png" alt="Icon">
+                                <img src="{{ asset('user_assets/images/icon/support.png') }}" alt="Icon">
                             </div>
                             <div class="content">
                                 <h3 class="title">Need Any Support For
@@ -858,7 +844,7 @@
                         <!--=== Single CTA Item ===-->
                         <div class="single-cta-item pl-lg-60 mb-40 wow fadeInRight">
                             <div class="icon">
-                                <img src="assets/images/icon/travel.png" alt="Icon">
+                                <img src="{{ asset('user_assets/images/icon/travel.png') }}" alt="Icon">
                             </div>
                             <div class="content">
                                 <h3 class="title">Ready to Get Started With Vacations!</h3>
@@ -879,7 +865,7 @@
                                 <p>To take trivial example which us
                                     ever undertakes laborious physica
                                     exercise except obsome</p>
-                                <a href="#" class="footer-logo"><img src="assets/images/logo/logo-white.png"
+                                <a href="#" class="footer-logo"><img src="{{ asset('user_assets/images/logo/logo-white.png') }}"
                                         alt="Site Logo"></a>
                             </div>
                         </div>
@@ -948,33 +934,19 @@
         </div>
     </footer><!--====== End Footer ======-->
     <!--====== Back To Top  ======-->
-    <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
-    <!--====== Jquery js ======-->
-    <script src="assets/vendor/jquery-3.6.0.min.js"></script>
-    <!--====== Bootstrap js ======-->
-    <script src="assets/vendor/popper/popper.min.js"></script>
-    <!--====== Bootstrap js ======-->
-    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--====== Slick js ======-->
-    <script src="assets/vendor/slick/slick.min.js"></script>
-    <!--====== Magnific js ======-->
-    <script src="assets/vendor/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!--====== Isotope js ======-->
-    <script src="assets/vendor/isotope.min.js"></script>
-    <!--====== Imagesloaded js ======-->
-    <script src="assets/vendor/imagesloaded.min.js"></script>
-    <!--====== Counterup js ======-->
-    <script src="assets/vendor/jquery.counterup.min.js"></script>
-    <!--====== Waypoints js ======-->
-    <script src="assets/vendor/jquery.waypoints.js"></script>
-    <!--====== Nice-select js ======-->
-    <script src="assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
-    <!--====== jquery UI js ======-->
-    <script src="assets/vendor/jquery-ui/jquery-ui.min.js"></script>
-    <!--====== WOW js ======-->
-    <script src="assets/vendor/wow.min.js"></script>
-    <!--====== Main js ======-->
-    <script src="assets/js/theme.js"></script>
+    <script src="{{ asset('user_assets/vendor/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/magnific-popup/dist/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/isotope.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/imagesloaded.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/jquery.waypoints.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/nice-select/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('user_assets/vendor/wow.min.js') }}"></script>
+    <script src="{{ asset('user_assets/js/theme.js') }}"></script>
 </body>
 
 </html>

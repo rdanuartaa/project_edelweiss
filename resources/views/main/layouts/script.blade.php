@@ -1,0 +1,13 @@
+<script src="{{asset('user_assets/vendor/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/popper/popper.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/slick/slick.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/isotope.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/imagesloaded.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/jquery.waypoints.js')}}"></script>
+<script src="{{asset('user_assets/vendor/nice-select/js/jquery.nice-select.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{asset('user_assets/vendor/wow.min.js')}}"></script>
+<script src="{{asset('user_assets/js/theme.js')}}"></script>
