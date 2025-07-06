@@ -4,7 +4,7 @@
     <meta name="description" content="Adventure, Tours, Travel">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Edelwess Tour & Travel Advanture</title>
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
+    <link rel="shortcut icon" href="{{asset('user_assets/images/favicon.ico')}}" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('user_assets/fonts/flaticon/flaticon_gowilds.css')}}">
     <link rel="stylesheet" href="{{asset('user_assets/fonts/fontawesome/css/all.min.css')}}">

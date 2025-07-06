@@ -4,7 +4,7 @@
         <div class="pre-shadow"></div>
         <div class="pre-box"></div>
     </div>
-</div><
+</div>
 <div class="modal fade search-modal" id="search-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
