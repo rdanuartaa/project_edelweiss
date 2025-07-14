@@ -21,7 +21,8 @@
                         <ul>
                             <li class="menu-item has-children"><a href="{{ route('main.index') }}">Beranda</a></li>
                             <li class="menu-item has-children"><a href="{{ route('main.trip') }}">Paket Trip</a></li>
-                            <li class="menu-item has-children"><a href="{{ route('main.tutorial') }}">Cara Booking</a></li>
+                            <li class="menu-item has-children"><a href="{{ route('main.tutorial') }}">Cara Booking</a>
+                            </li>
                             <li class="menu-item has-children"><a href="{{ route('main.about') }}">Tentang Kami</a></li>
                             <li class="menu-item has-children"><a href="{{ route('main.artikel') }}">Artikel</a></li>
 
@@ -76,6 +77,11 @@
                     <div class="menu-button d-xl-block d-none">
                         <a href="contact.html" class="main-btn primary-btn">Chat Admin<i
                                 class="fas fa-paper-plane"></i></a>
+                    </div>
+                    <div class="navbar-toggler">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>

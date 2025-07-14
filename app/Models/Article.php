@@ -7,12 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    use HasFactory;
+    protected $fillable = ['tag_id', 'judul', 'deskripsi', 'isi', 'gambar'];
 
-    protected $fillable = ['judul', 'deskripsi', 'isi', 'gambar'];
-
-    public function tags()
+    public function tag()
     {
-        return $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
+        return $this->belongsTo(Tag::class);
     }
 }
+

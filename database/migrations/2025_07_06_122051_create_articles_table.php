@@ -12,14 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('articles', function (Blueprint $table) {
-        $table->bigIncrements('id'); // BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY
-        $table->string('judul', 255); // VARCHAR(255) NOT NULL
-        $table->text('deskripsi'); // TEXT NOT NULL
-        $table->text('isi'); // TEXT NOT NULL
-        $table->text('gambar')->nullable(); // TEXT NULL
-        $table->timestamps(); // created_at & updated_at
-    });
+            $table->bigIncrements('id'); // id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            $table->unsignedBigInteger('tag_id')->nullable(); // Tambahkan kolom tag_id
+            $table->string('judul', 255);
+            $table->text('deskripsi');
+            $table->text('isi');
+            $table->text('gambar')->nullable();
+            $table->timestamps();
 
+            // Setelah kolom dibuat, baru tambahkan foreign key
+            $table->foreign('tag_id')
+                  ->references('id')->on('tags')
+                  ->onDelete('set null');
+        });
     }
 
     /**

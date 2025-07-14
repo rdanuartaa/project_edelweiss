@@ -3,7 +3,7 @@
     <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
   </button>
   <div>
-    <a href="index.html" class="sidebar-logo">
+    <a href="{{ route('admin.dashboard.index') }}" class="sidebar-logo">
       <img src="{{asset('admin_assets/images/logo.png') }}" alt="site logo" class="light-logo">
       <img src="{{asset('admin_assets/images/logo-light.png') }}" alt="site logo" class="dark-logo">
       <img src="{{asset('admin_assets/images/logo-icon.png') }}" alt="site logo" class="logo-icon">
@@ -18,19 +18,19 @@
         </a>
       </li>
       <li>
-        <a href="chat-message.html">
+        <a href="{{ route('admin.users.index') }}">
           <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
-          <span>Pengguna</span>
+          <span>Kelola Pengguna</span>
         </a>
       </li>
       <li>
-        <a href="calendar-main.html">
+        <a href="{{ route('admin.packages.index') }}">
           <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
           <span>Kelola Paket Trip</span>
         </a>
       </li>
       <li>
-        <a href="kanban.html">
+        <a href="{{ route('admin.package-schedules.index') }}">
           <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
           <span>Jadwal Paket Trip</span>
         </a>
@@ -40,17 +40,29 @@
           <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
           <span>Booking & Tiket</span>
         </a>
-      </li><li>
-        <a href="kanban.html">
-          <iconify-icon icon="hugeicons:money-send-square" class="menu-icon"></iconify-icon>
-          <span>Penghasilan</span>
-        </a>
       </li>
       <li>
-        <a href="{{ route('admin.artikel.index') }}">
-          <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
-          <span>Artikel</span>
+        <a href="kanban.html">
+          <iconify-icon icon="hugeicons:money-send-square" class="menu-icon"></iconify-icon>
+          <span>Kelola Pembayaran</span>
         </a>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)">
+          <iconify-icon icon="mdi-newspaper" class="menu-icon"></iconify-icon>
+          <span>Kelola Artikel</span>
+        </a>
+        <ul class="sidebar-submenu">
+          <li>
+            <a href="{{ route('admin.articles.index') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Tambah Artikel</a>
+          </li>
+          <li>
+            <a href="{{ route('admin.tags.index') }}"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Tambah Tag</a>
+          </li>
+          <li>
+            <a href="{{ route('admin.articles.show.latest') }}"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i>Detail Artikel</a>
+          </li>
+        </ul>
       </li>
       <li>
         <a href="kanban.html">
