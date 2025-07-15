@@ -9,6 +9,7 @@ class PackageSchedule extends Model
 {
     protected $fillable = [
         'package_id',
+        'package_detail_id',
         'date',
         'quota',
         'remaining_quota',
@@ -17,6 +18,11 @@ class PackageSchedule extends Model
     public function package()
     {
         return $this->belongsTo(Package::class);
+    }
+
+    public function packageDetail()
+    {
+        return $this->belongsTo(PackageDetail::class);
     }
 
 }

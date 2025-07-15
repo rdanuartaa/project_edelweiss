@@ -35,7 +35,7 @@
 
                         <div>
                             <label class="form-label fw-bold text-neutral-900">Tag</label>
-                            <select name="tag_id" class="form-select border border-neutral-200 radius-8" required>
+                            <select name="tag_id" class="form-select select-custom border border-neutral-200 radius-8" required>
                                 <option value="">Pilih Tag</option>
                                 @foreach ($tags as $tag)
                                     <option value="{{ $tag->id }}"

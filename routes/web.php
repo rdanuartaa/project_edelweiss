@@ -9,6 +9,7 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackageScheduleController;
+use App\Http\Controllers\AdminBookingController;
 use App\Http\Controllers\FacilityController;
 use Illuminate\Support\Facades\Route;
 // Halaman utama
@@ -30,11 +31,15 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::put('/users/{user}/update-role', [UserController::class, 'updateRole'])->name('users.updateRole');
     Route::resource('packages', PackageController::class);
     Route::resource('facilities', FacilityController::class);
-    Route::resource('package-schedules', PackageScheduleController::class);
-    Route::get('package-schedules/{package_id}/{month}', [PackageScheduleController::class, 'show'])->name('package-schedules.show');
-    Route::delete('package-schedules/{package_id}/{month}', [PackageScheduleController::class, 'destroyMonth'])->name('package-schedules.destroyMonth');
-    Route::put('package-schedules/update-quota/{schedule}', [PackageScheduleController::class, 'updateQuota'])->name('package-schedules.updateQuota');
-    Route::delete('package-schedules/delete-day/{schedule}', [PackageScheduleController::class, 'deleteDay'])->name('package-schedules.deleteDay');
+    Route::get('package_schedules', [PackageScheduleController::class, 'index'])->name('package_schedules.index');
+    Route::get('package_schedules/{package_id}/{month}', [PackageScheduleController::class, 'show'])->name('package_schedules.show');
+    Route::put('package_schedule_details/{detail}', [PackageScheduleController::class, 'updateQuota'])->name('package_schedules.updateQuota');
+    Route::delete('package_schedules/day/{detail}', [PackageScheduleController::class, 'destroyDay'])->name('package_schedules.deleteDay');
+    Route::delete('package_schedules/{package_id}/{month}', [PackageScheduleController::class, 'destroyMonth'])->name('package_schedules.destroyMonth');
+    Route::post('package_schedules/generate', [PackageScheduleController::class, 'generate'])->name('package_schedules.generate');
+    Route::resource('bookings', AdminBookingController::class);
+    Route::post('bookings/{booking}/approve', [AdminBookingController::class, 'approve'])->name('bookings.approve');
+    Route::post('bookings/{booking}/reject', [AdminBookingController::class, 'reject'])->name('bookings.reject');
     Route::post('/articles/gemini/generate', [ArticleController::class, 'generateArticleFromGemini'])->name('articles.gemini.generate');
     Route::get('/articles/show', [ArticleController::class, 'show'])->name('articles.show.latest');
     Route::resource('articles', ArticleController::class);

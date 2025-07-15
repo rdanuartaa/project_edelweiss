@@ -14,7 +14,6 @@
                             <th class="text-start">No</th>
                             <th>Tanggal Dibuat</th>
                             <th>Nama</th>
-                            <th>Jenis Paket</th>
                             <th>Jenis Harga</th>
                             <th>Harga</th>
                             <th class="text-start">Poster</th>
@@ -27,12 +26,6 @@
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ \Carbon\Carbon::parse($package->created_at)->translatedFormat('d F Y') }}</td>
                                 <td class="fw-medium">{{ $package->name }}</td>
-                                <td>
-                                    @php
-                                        $jenisPaket = $package->options->pluck('option_name')->implode(', ');
-                                    @endphp
-                                    {{ $jenisPaket }}
-                                </td>
                                 <td>
                                     @php
                                         $jenisHarga = $package->options

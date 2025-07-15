@@ -105,58 +105,72 @@ class PackageController extends Controller
     }
 
     public function update(Request $request, Package $package)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'location' => 'nullable|string',
-            'latitude' => 'nullable|numeric',
-            'longitude' => 'nullable|numeric',
-            'banner' => 'nullable|image',
-            'poster' => 'nullable|image',
-            'options' => 'required|array',
-            'options.*.option_name' => 'required|string|max:255',
-            'options.*.price' => 'required|numeric',
-            'options.*.price_type' => 'required|in:per_orang,per_jeep',
-            'options.*.duration' => 'required|string|max:255',
-            'options.*.facilities' => 'nullable|array',
-            'options.*.facilities.*' => 'nullable|string|max:255',
-        ]);
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'required|string',
+        'location' => 'nullable|string',
+        'latitude' => 'nullable|numeric',
+        'longitude' => 'nullable|numeric',
+        'banner' => 'nullable|image',
+        'poster' => 'nullable|image',
+        'options' => 'required|array',
+        'options.*.option_name' => 'required|string|max:255',
+        'options.*.price' => 'required|numeric',
+        'options.*.price_type' => 'required|in:per_orang,per_jeep',
+        'options.*.duration' => 'required|string|max:255',
+        'options.*.facilities' => 'nullable|array',
+        'options.*.facilities.*' => 'nullable|string|max:255',
+    ]);
 
-        // Hapus file lama jika diganti
-        if ($request->hasFile('banner')) {
-            if ($package->banner) {
-                Storage::disk('public')->delete($package->banner);
-            }
-            $validated['banner'] = $request->file('banner')->store('banners', 'public');
+    // Ganti file banner jika ada
+    if ($request->hasFile('banner')) {
+        if ($package->banner) {
+            Storage::disk('public')->delete($package->banner);
         }
+        $validated['banner'] = $request->file('banner')->store('banners', 'public');
+    }
 
-        if ($request->hasFile('poster')) {
-            if ($package->poster) {
-                Storage::disk('public')->delete($package->poster);
-            }
-            $validated['poster'] = $request->file('poster')->store('posters', 'public');
+    // Ganti file poster jika ada
+    if ($request->hasFile('poster')) {
+        if ($package->poster) {
+            Storage::disk('public')->delete($package->poster);
         }
+        $validated['poster'] = $request->file('poster')->store('posters', 'public');
+    }
 
-        // Update data utama
-        $package->update([
-            'name' => $validated['name'],
-            'description' => $validated['description'],
-            'location' => $validated['location'],
-            'latitude' => $validated['latitude'],
-            'longitude' => $validated['longitude'],
-            'banner' => $validated['banner'] ?? $package->banner,
-            'poster' => $validated['poster'] ?? $package->poster,
-        ]);
+    // Update data utama paket
+    $package->update([
+        'name' => $validated['name'],
+        'description' => $validated['description'],
+        'location' => $validated['location'],
+        'latitude' => $validated['latitude'],
+        'longitude' => $validated['longitude'],
+        'banner' => $validated['banner'] ?? $package->banner,
+        'poster' => $validated['poster'] ?? $package->poster,
+    ]);
 
-        // Hapus semua opsi & fasilitas lama
-        foreach ($package->options as $option) {
+    // Simpan ID dari opsi yang diproses untuk menjaga data lama
+    $processedOptionIds = [];
+
+    foreach ($validated['options'] as $optionData) {
+        // Coba cari apakah ada opsi lama dengan nama yang sama
+        $option = $package->options()
+            ->where('option_name', $optionData['option_name'])
+            ->first();
+
+        if ($option) {
+            // Update opsi lama
+            $option->update([
+                'duration' => $optionData['duration'],
+                'price' => $optionData['price'],
+                'price_type' => $optionData['price_type'],
+            ]);
+
+            // Hapus semua fasilitas lama lalu buat ulang
             $option->facilities()->delete();
-            $option->delete();
-        }
-
-        // Tambahkan opsi & fasilitas baru
-        foreach ($validated['options'] as $optionData) {
+        } else {
+            // Buat opsi baru
             $option = PackageDetail::create([
                 'package_id' => $package->id,
                 'option_name' => $optionData['option_name'],
@@ -164,19 +178,33 @@ class PackageController extends Controller
                 'price' => $optionData['price'],
                 'price_type' => $optionData['price_type'],
             ]);
-
-            foreach ($optionData['facilities'] ?? [] as $facilityName) {
-                if ($facilityName) {
-                    Facility::create([
-                        'package_detail_id' => $option->id,
-                        'name' => $facilityName,
-                    ]);
-                }
-            }
         }
 
-        return redirect()->route('admin.packages.index')->with('success', 'Paket berhasil diperbarui.');
+        // Simpan ID opsi yang diproses
+        $processedOptionIds[] = $option->id;
+
+        // Simpan fasilitas baru
+        foreach ($optionData['facilities'] ?? [] as $facilityName) {
+            if ($facilityName) {
+                Facility::create([
+                    'package_detail_id' => $option->id,
+                    'name' => $facilityName,
+                ]);
+            }
+        }
     }
+
+    // Hapus opsi lama yang tidak ikut diproses (dan tidak memiliki jadwal)
+    $package->options()->whereNotIn('id', $processedOptionIds)->get()->each(function ($oldOption) {
+        // Cek apakah punya jadwal?
+        if ($oldOption->schedules()->count() === 0) {
+            $oldOption->facilities()->delete();
+            $oldOption->delete();
+        }
+    });
+
+    return redirect()->route('admin.packages.index')->with('success', 'Paket berhasil diperbarui.');
+}
 
     public function destroy(Package $package)
     {
@@ -215,5 +243,4 @@ class PackageController extends Controller
             'latestPackages' => $latestPackages, // <- kirim ke view
         ]);
     }
-
 }

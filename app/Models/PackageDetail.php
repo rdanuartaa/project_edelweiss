@@ -22,4 +22,8 @@ class PackageDetail  extends Model
     public function package() {
         return $this->belongsTo(Package::class);
     }
+    
+    public function schedules() {
+        return $this->hasMany(PackageSchedule::class);
+    }
 }

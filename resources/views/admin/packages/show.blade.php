@@ -158,7 +158,6 @@
                     @empty
                         <p class="text-neutral-500">Tidak ada paket lain.</p>
                     @endforelse
-
                 </div>
             </div>
         </div>

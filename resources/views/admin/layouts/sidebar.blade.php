@@ -30,13 +30,13 @@
         </a>
       </li>
       <li>
-        <a href="{{ route('admin.package-schedules.index') }}">
+        <a href="{{ route('admin.package_schedules.index') }}">
           <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
           <span>Jadwal Paket Trip</span>
         </a>
       </li>
       <li>
-        <a href="kanban.html">
+        <a href="{{ route('admin.bookings.index') }}">
           <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
           <span>Booking & Tiket</span>
         </a>

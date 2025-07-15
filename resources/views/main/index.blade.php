@@ -96,7 +96,7 @@
                     </div>
                     <div class="form_group">
                         <button class="booking-btn">Check Availability <i
-                                class="far fa-angle-double-right"></i></button>
+                                class="far fa-angle-double-right mt-32"></i></button>
                     </div>
                 </form>
             </div>

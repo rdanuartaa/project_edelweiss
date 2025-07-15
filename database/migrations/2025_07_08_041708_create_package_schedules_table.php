@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('package_schedules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('package_id')->constrained('packages')->onDelete('cascade');
+            $table->foreignId('package_detail_id')->constrained('package_details')->onDelete('cascade');
             $table->date('date');
             $table->integer('quota');
             $table->integer('remaining_quota');
